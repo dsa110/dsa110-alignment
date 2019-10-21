@@ -14,7 +14,7 @@ Edit and run *run.py* in the scripts directory, following the comments. For exam
 
 Given two images (in up and down orientations), run *alignment.py* in the scripts directory to calculate the pointing error, which will be printed to the terminal. Example images in the demo folder:
 
-Example: *python3 alignment.py --upfile dish1_up.bmp --downfile --dish1_down.bmp*
+Example: *python3 alignment.py --upfile dish1_up.bmp --downfile dish1_down.bmp*
 
 Can also run *python3 alignment.py -h* for more info
 
