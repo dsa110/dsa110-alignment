@@ -83,10 +83,11 @@ offset_pix = 0.5*np.abs(nx_up-nx_down)
 
 offset_arcmin = offset_pix*pixscale/60
 
+# if the symmetry axis is to the left of north celestial pole in the 'up' image, it means the telescope is pointed west of north
 if (nx_mid-nx_up) < 0:
-	orient = 'east of north'
-else:
 	orient = 'west of north'
+else:
+	orient = 'east of north'
 
 print('Pixel scale of images = %04.2f arcsec/pix' %(pixscale,))
 print('Pointing Offset: %04.2f arcmin %s\n' %(offset_arcmin, orient))
