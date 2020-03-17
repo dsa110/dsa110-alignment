@@ -13,7 +13,9 @@ import os
 # cat: path to input catalog
 # cra, cdec (deg): ra and dec of position (can be None to return all sources)
 # sep (deg): separation from positon (can be None to return all sources)
-def read_bsc(cat='/Users/vikram/Projects/DSA-110/CODE/dsa_antenna_alignment/data/bsc5.dat',cra=0.0,cdec=45.0,sep=10.0):
+
+# NITIKA: changed the cat path to one on my own computer
+def read_bsc(cat='/home/nitikayad96/GradSchool/Research/DSA/antenna_alignment/dsa_antenna_alignment/data/bsc5.dat',cra=0.0,cdec=45.0,sep=10.0):
 
     output = []
     rr = []

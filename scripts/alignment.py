@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description="Script that inputs two Polaris images (up and down orientation) and outputs pointing error from the north/south axis for the DSA dish on which the camera was mounted.")
+parser = argparse.ArgumentParser(description="Script that inputs two Polaris images (up and down orientation) and outputs pointing error from the north/south axis for the DSA dish on which the camera was mounted. Make sure to calculate current NCP coordinates and edit file for accurate results!")
 parser.add_argument('--upfile',type=str, help="File path for image taken with camera in right-side up orientation")
 parser.add_argument('--downfile',type=str, help="File path for image taken with camera in upside down orientation")
 
@@ -59,8 +59,9 @@ print('Solving for locations of north celestial pole...')
 up_northpixfile = os.path.join(outdir, up_files+'_northpix.txt')
 down_northpixfile = os.path.join(outdir, down_files+'_northpix.txt')
 
-cmd_northpix_up = 'wcs-rd2xy -w %s -r 0 -d 90 >> %s' %(upwcs, up_northpixfile)
-cmd_northpix_down = 'wcs-rd2xy -w %s -r 0 -d 90 >> %s' %(downwcs, down_northpixfile)
+# IMPORTANT NOTE: Want to calculate updated NCP to do calculations! #
+cmd_northpix_up = 'wcs-rd2xy -w %s -r 359.8700747 -d 89.88773118 >> %s' %(upwcs, up_northpixfile)
+cmd_northpix_down = 'wcs-rd2xy -w %s -r 359.8700747 -d 89.88773118  >> %s' %(downwcs, down_northpixfile)
 
 print(cmd_northpix_up+'\n')
 os.system(cmd_northpix_up)
